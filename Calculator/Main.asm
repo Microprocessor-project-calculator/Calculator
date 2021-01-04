@@ -119,14 +119,14 @@ multiplication :    cmp aux, 0
                     
                     
 Division : 
-            cmp aux ,0
-            jne div1
-            mov eax,sign
-            mul nr
-            mov aux ,eax
-            mov co  , 2
-            mov nr ,0
-            jmp psign
+            cmp aux ,0       
+            jne div1         ;jump to label div1 if aux != 0
+            mov eax,sign     ;eax = sign => sign may be 1 or -1
+            mul nr           ;nr*eax(sign)
+            mov aux ,eax     ;aux = eax
+            mov co  , 2      ;set co = 2
+            mov nr ,0        ;set nr = 0
+            jmp psign        ;jump to label psign
               
               
   default : 
