@@ -55,7 +55,8 @@ switch :
    je Division               ;jump if v[i]=='/'
 
 
- addition : cmp buffer[ebp-1],'*'            
+ addition : 
+              cmp buffer[ebp-1],'*'            
               je psign                        ;jump  to label psing if buffer[ebp] == '*'
               cmp buffer[ebp-1],'/'
               je psign                        ;jump  to label psing if buffer[ebp] == '/'
@@ -71,16 +72,17 @@ switch :
               jmp psign
               
               
-  default : mov eax,ecx
-             sub eax,1
+  default : 
+             mov eax,ecx                     ;ecx=n , mov it to keep it from changing
+             sub eax,1                       ;eax=eax-1 , n-1
              cmp ebp,eax
-             jb incre
+             jb incre                        ;jump if ebp < eax , i < n-1 
              cmp co, 1
-             jne dco2
-             mov ax,sign
-             mul nr
-             mul aux
-             add result,eax
+             jne dco2                        ;jump if co != 1 , c!=1
+             mov eax,sign      
+             mul nr                          ;eax = eax * nr , eax = nr * sign
+             mul aux                         ;eax = eax * aux , eax = nr * aux * sign 
+             add result,eax                  ; resule+= eax , result += nr * aux * sign
              jmp answer
 
 
