@@ -71,6 +71,22 @@ switch :
               mov co, 0
               jmp psign
 
+  subtraction :
+             cmp buffer[ebp - 1], '*'
+             je nsign
+             cmp buffer[ebp - 1], '/'
+             je nsign
+             cmp co, 1
+             jne sco2
+             mov eax, sign
+             mul nr
+             mul aux
+             
+             add result, eax
+             mov aux, 0
+             mov nr, 0
+             mov co, 0
+             jmp nsign
 
 multiplication :    cmp aux, 0
                     jne mco2
