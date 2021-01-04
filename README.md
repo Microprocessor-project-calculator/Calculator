@@ -8,7 +8,7 @@ We take an expression from user as a string, and then we deal with all numerical
 
  
 
-Firstly, we make a cpp code -which appears in resources below- that deal with all functions that we need, after that we turn every instruction to assembly by help of reference: **assembly language for x86 processors**, which were a really helpful to deal with **jmp**, **cmp** function
+Firstly, we made a cpp code -which appears in resources below- that deal with all functions that we need, after that we turn every instruction to assembly by help of reference: **assembly language for x86 processors**, which was really helpful to deal with **jmp**, **cmp** functions
 
 **Example of our usage:** 
 
