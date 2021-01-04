@@ -88,14 +88,14 @@ switch :
              mov co, 0
              jmp nsign
 
-multiplication :    cmp aux, 0
-                    jne mco2
-                    mov eax,sign
-                    mul nr
-                    mov aux , eax
-                    mov co  , 1
-                    mov nr ,0
-                    jmp psign
+multiplication :    cmp aux, 0                     
+                    jne mco2             ;jump to label mco2 if aux != 0
+                    mov eax,sign         ;eax = 1 or eax = -1 => sign may be 1 or -1
+                    mul nr               ;nr*eax(sign)
+                    mov aux , eax        ;aux = eax 
+                    mov co  , 1          ;set co = 1
+                    mov nr ,0            ;set nr = 0
+                    jmp psign            ;jump to label psign
                     
                     
                     
