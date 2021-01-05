@@ -88,14 +88,13 @@ subtraction :
            mov nr, 0                      ;nr=0
            mov co, 0                      ;co=0
            jmp nsign                      ; jump to nsign
-  sco2 :
-           cmp co, 2        ;if(co!=2)
-           jne sco0         ;jump to sco0
-           cmp nr,0         ; if (nr==0) if you divide by zero
-           je error         ;jump to error
-           mov eax, aux     ;eax=aux
-           div nr           ;eax/=nr
-           mul sign         ;eax*=sign 
+
+
+
+
+
+
+
 
 
 
@@ -131,14 +130,14 @@ multiplication :
               
               
  Division : 
-            cmp aux ,0
-            jne div1
-            mov eax,sign
-            mul nr
-            mov aux ,eax
-            mov co  , 2
-            mov nr ,0
-            jmp psign
+            cmp aux ,0                    ;compare aux and 0
+            jne div1                      ;jump to label div1 if aux != 0 
+            mov eax,sign                  ;eax = sign
+            mul nr                        ;eax*nr
+            mov aux ,eax                  ;aux = eax
+            mov co  , 2                   ;co = 2
+            mov nr ,0                     ;nr=0
+            jmp psign                     ;jump to label psign
               
               
   default : 
