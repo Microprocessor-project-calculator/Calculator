@@ -141,6 +141,19 @@ Division :
              mul aux                         ;eax = eax * aux , eax = nr * aux * sign 
              add result,eax                  ; resule+= eax , result += nr * aux * sign
              jmp answer
+             
+   dco2 :    cmp co, 2
+             jne dco0
+             mov eax,aux
+             div nr
+             mul sign
+             add result,eax
+             jmp answer
+
+    dco0 :   mov eax, sign
+             mul nr
+             add result,eax
+             jmp answer
 
 
 INVOKE ExitProcess, 0
