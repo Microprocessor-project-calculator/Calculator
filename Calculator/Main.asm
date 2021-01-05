@@ -88,13 +88,14 @@ subtraction :
            mov nr, 0                      ;nr=0
            mov co, 0                      ;co=0
            jmp nsign                      ; jump to nsign
-
-
-
-
-
-
-
+  sco2 :
+           cmp co, 2        ;if(co!=2)
+           jne sco0         ;jump to sco0
+           cmp nr,0         ; if (nr==0) if you divide by zero
+           je error         ;jump to error
+           mov eax, aux     ;eax=aux
+           div nr           ;eax/=nr
+           mul sign         ;eax*=sign 
 
 
 
