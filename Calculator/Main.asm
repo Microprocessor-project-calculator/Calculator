@@ -72,14 +72,15 @@ switch :
               jmp psign
 
 
-multiplication :    cmp aux, 0
-                    jne mco2
-                    mov eax,sign
-                    mul nr
-                    mov aux , eax
-                    mov co  , 1
-                    mov nr ,0
-                    jmp psign
+multiplication :    
+              cmp aux, 0
+              jne mco2
+              mov eax,sign
+              mul nr
+              mov aux , eax
+              mov co  , 1
+              mov nr ,0
+              jmp psign     
               
               
   default : 
