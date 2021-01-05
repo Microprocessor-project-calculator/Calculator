@@ -141,15 +141,15 @@ multiplication :
               
               
      div1:   
-            cmp co ,1
-            jne delse
-            mov eax ,sign
-            mul nr 
-            mul aux           
-            mov aux ,eax
-            mov co  , 2
-            mov nr ,0
-            jmp psign
+            cmp co ,1                    ;compare co and 1
+            jne delse                    ;jump to label delse if co != 1
+            mov eax ,sign                ;eax = sign
+            mul nr                       ;eax*nr
+            mul aux                      ;aux*eax
+            mov aux ,eax                 ;aux =eax
+            mov co  , 2                  ;co=2
+            mov nr ,0                    ;nr =0
+            jmp psign                    ;jump to label psign
               
   default : 
              mov eax,ecx                     ;ecx=n , mov it to keep it from changing
