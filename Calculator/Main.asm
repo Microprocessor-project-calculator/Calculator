@@ -74,20 +74,20 @@ switch :
 
 
 subtraction :
-           cmp buffer[ebp - 1], '*'
-           je nsign                          
-           cmp buffer[ebp - 1], '/'
-           je nsign
-           cmp co, 1
-           jne sco2
-           mov eax, sign
-           mul nr
-           mul aux
-           add result, eax
-           mov aux, 0
-           mov nr, 0
-           mov co, 0
-           jmp nsign
+           cmp buffer[ebp - 1], '*'       ;if (buffer[ebp-1]=='*')      
+           je nsign                       ;if condition true, jump to nsign  
+           cmp buffer[ebp - 1], '/'       ;if (buffer[ebp-1]=='/')     
+           je nsign                       ;if condition true, jump to nsign   
+           cmp co, 1                      ;if(co!=1)
+           jne sco2                       ;jump to sco2
+           mov eax, sign                  ; eax=sign
+           mul nr                         ;eax*=nr
+           mul aux                        ;eax*=aux
+           add result, eax                ;result+=eax
+           mov aux, 0                     ;aux=0
+           mov nr, 0                      ;nr=0
+           mov co, 0                      ;co=0
+           jmp nsign                      ; jump to nsign
 
 
 
