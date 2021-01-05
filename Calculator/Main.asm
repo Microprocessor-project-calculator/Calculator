@@ -140,6 +140,17 @@ multiplication :
             jmp psign                     ;jump to label psign
               
               
+     div1:   
+            cmp co ,1
+            jne delse
+            mov eax ,sign
+            mul nr 
+            mul aux           
+            mov aux ,eax
+            mov co  , 2
+            mov nr ,0
+            jmp psign
+              
   default : 
              mov eax,ecx                     ;ecx=n , mov it to keep it from changing
              sub eax,1                       ;eax=eax-1 , n-1
