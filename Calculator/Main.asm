@@ -107,7 +107,30 @@ multiplication :
               mov aux , eax
               mov co  , 1
               mov nr ,0
-              jmp psign     
+              jmp psign  
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+ Division : 
+            cmp aux ,0
+            jne div1         
+            mov eax,sign
+            mul nr
+            mov aux ,eax
+            mov co  , 2
+            mov nr ,0
+            jmp psign
               
               
   default : 
