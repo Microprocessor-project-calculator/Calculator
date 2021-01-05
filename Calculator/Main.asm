@@ -106,19 +106,19 @@ multiplication :
               mul nr           ;eax*nr
               mov aux , eax    ;aux = eax
               mov co  , 1      ;co = 1
-              mov nr ,0        ;nr=0
+              mov nr ,0        ;nr = 0
               jmp psign        ;jump to label psign
              
   mco2   :   
-              cmp co , 2
-              jne melse 
-              mov eax, aux
-              div nr
-              mul sign
-              mov aux ,eax
-              mov co  , 1
-              mov nr ,0
-              jmp psign
+              cmp co , 2       ;compare co and 2
+              jne melse        ;jump to label melse if co!=2
+              mov eax, aux     ;eax = aux
+              div nr           ;eax /nr
+              mul sign         ;eax *sign
+              mov aux ,eax     ;aux = eax
+              mov co  , 1      ;co = 1
+              mov nr ,0        ;nr = 0
+              jmp psign        ;jump to label psign
               
               
               
