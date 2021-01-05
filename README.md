@@ -39,7 +39,7 @@ If it’s '2', so it indicates that there’s a division operation, for that it�
 # Overview:
 **In code**:
 we use ***start*** to represent the `infinite loop` in which user can use the program to write expression more than one time, by `jmp` to this label at the ***answer*** section at the end of program:
-**Entering more than one expression:
+**Entering more than one expression:**
 
 ![e12547d6-e81d-4c1d-a7d6-2d6458692a17](https://user-images.githubusercontent.com/76706477/103569534-27a1a080-4ed0-11eb-90de-41cb8b5884af.jpg)
 
@@ -49,12 +49,20 @@ we use ***start*** to represent the `infinite loop` in which user can use the pr
 ![4eeb0392-f1df-49bd-b542-a1dd437cfc7f](https://user-images.githubusercontent.com/76706477/103569674-659ec480-4ed0-11eb-8e13-b2922d7fc7ee.jpg)
 
 
-after that, we have ***switch*** section in which we check if entered symbol is: '+','-','\*','/' or other.
-Depending on the entered symbol we `je` to required label: ***addition***, ***substraction***, ***multiplication*** or ***Division***
+after that, we have ***switch*** section in which we check if entered symbol is: '+','-','\*','/', '!' or other.
+Depending on the entered symbol we `je` to required label: ***addition***, ***substraction***, ***multiplication***, ***Division*** or ***factorial***
+
+**Example of different inputs:**
+
+![photo6028163303936734305](https://user-images.githubusercontent.com/76706477/103699156-33ae6080-4fab-11eb-9456-be1812542ee7.jpg)
+
 There's also ***psign*** and ***nsign*** labels which indicates positive and negative sign.
 in ***incre*** we only increment the value of **Ebp** register by one to move to next digit.
-finally, in ***answer*** section we `mov` the final value to the result and show it and return to begin to retry all the program again to make user able to write many expressions as he wanted.
+also, in ***answer*** section we `mov` the final value to the result and show it and return to begin to retry all the program again to make user able to write many expressions as he wanted.
 
+Finally, in ***error*** section we handle the problem of division by zero. as we told user that, there's an error by divide by zero:
+
+![photo6028163303936734306 (1)](https://user-images.githubusercontent.com/76706477/103699536-c3540f00-4fab-11eb-9e7d-4573b6fca80f.jpg)
 
 
 
