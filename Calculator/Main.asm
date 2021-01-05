@@ -100,14 +100,14 @@ subtraction :
 
 
 multiplication :    
-              cmp aux, 0
-              jne mco2
-              mov eax,sign
-              mul nr
-              mov aux , eax
-              mov co  , 1
-              mov nr ,0
-              jmp psign   
+              cmp aux, 0       ;compare aux and 0
+              jne mco2         ;jump to label mco2 if aux != 0 
+              mov eax,sign     ;eax = sign
+              mul nr           ;eax*nr
+              mov aux , eax    ;aux = eax
+              mov co  , 1      ;co = 1
+              mov nr ,0        ;nr=0
+              jmp psign        ;jump to label psign
              
   mco2   :   
               cmp co , 2
