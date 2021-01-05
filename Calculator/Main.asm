@@ -107,30 +107,18 @@ multiplication :
               mov aux , eax
               mov co  , 1
               mov nr ,0
-              jmp psign  
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
- Division : 
-            cmp aux ,0
-            jne div1         
-            mov eax,sign
-            mul nr
-            mov aux ,eax
-            mov co  , 2
-            mov nr ,0
-            jmp psign
+              jmp psign   
+             
+  mco2   :   
+              cmp co , 2
+              jne melse 
+              mov eax, aux
+              div nr
+              mul sign
+              mov aux ,eax
+              mov co  , 1
+              mov nr ,0
+              jmp psign
               
               
   default : 
