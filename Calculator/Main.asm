@@ -121,6 +121,25 @@ multiplication :
               jmp psign
               
               
+              
+              
+              
+              
+              
+              
+              
+              
+ Division : 
+            cmp aux ,0
+            jne div1
+            mov eax,sign
+            mul nr
+            mov aux ,eax
+            mov co  , 2
+            mov nr ,0
+            jmp psign
+              
+              
   default : 
              mov eax,ecx                     ;ecx=n , mov it to keep it from changing
              sub eax,1                       ;eax=eax-1 , n-1
