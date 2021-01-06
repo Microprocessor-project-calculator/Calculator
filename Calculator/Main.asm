@@ -190,7 +190,10 @@ melse  :
    psign :
               mov sign, 1                     ; sign = 1
               jmp default        
-              
+  nsign:
+              mov sign,-1                     ;sign=-1
+              jmp default
+     
   default : 
              mov eax,ecx                     ;ecx=n , mov it to keep it from changing
              sub eax,1                       ;eax=eax-1 , n-1
