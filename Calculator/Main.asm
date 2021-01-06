@@ -177,9 +177,8 @@ melse  :
             mov co  , 2                 ;co=2
             mov nr ,0                   ;nr=0
             jmp psign                   ;jump to label psign
-            
 
-     psign :
+   psign :
               mov sign, 1                     ; sign = 1
               jmp default        
               
