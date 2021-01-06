@@ -141,6 +141,10 @@ multiplication :
             mov co  , 2                  ;co=2
             mov nr ,0                    ;nr =0
             jmp psign                    ;jump to label psign
+
+     psign :
+              mov sign, 1                     ; sign = 1
+              jmp default        
               
   default : 
              mov eax,ecx                     ;ecx=n , mov it to keep it from changing
@@ -174,11 +178,7 @@ multiplication :
             inc ebp                          ;i++
             jmp loop1
 
-  psign : mov sign, 1
-          jmp default
-          nsign:
-          mov sign,-1
-          jmp default
+             
 
    exit
 
