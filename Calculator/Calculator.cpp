@@ -1,20 +1,142 @@
-// Calculator.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    char v[20];
+    int sign, n, i,nr,c;
+    float result,aux;
+    while (1)
+    {
+        cout << "insert the expression:" << endl;
+        scanf("%s", v);
+        n = strlen(v);
+        result = 0, nr = 0, aux = 0, c = 0;
+        sign = 1, n, i = 0;
+        while (i<n)//loops only once through the array
+        {
+            while (v[i] >= '0'&&v[i] <= '9')//builds the number
+            {
+                nr = nr * 10 + (v[i] - '0');
+                i++;
+            }
+            switch (v[i])//identifies the operations
+            {
+            case '+': {
+
+                if (!(v[i - 1] == '*') && !(v[i - 1] == '/'))//if a*-b or a/-b occurs it does nothing
+                {
+                    if (c == 1)// * was found before: 2*2+1
+                    {
+                        result += aux*nr*sign;// updates the end result
+                        aux = 0;//aux is reseted
+                    }
+                    else if (c == 2)// / was found before: 2/2+1
+                    {
+                        result += aux / nr*sign;
+                        aux = 0;
+                    }
+                    else
+                    {
+                        result += nr*sign;
+                    }
+                    nr = 0;
+                    c = 0;
+                }
+
+                sign = 1;
+
+                break;
+            }
+            case '-': {
+                if (!(v[i - 1] == '*') && !(v[i - 1] == '/'))
+                {
+                    if (c == 1)
+                    {
+                        result += aux*nr*sign;
+                        aux = 0;
+                    }
+                    else if (c == 2)
+                    {
+                        result += aux / nr*sign;
+                        aux = 0;
+                    }
+                    else
+                    {
+                        result += nr*sign;
+                    }
+                    c = 0;
+                    nr = 0;
+                }
+                sign = -1;
+                break;
+            }
+            case '*': {
+                if (!aux)
+                {
+                    aux = nr*sign; // aux hold the result from * and / operations
+                }
+                else if (c == 2)
+                {
+                    aux /= nr*sign;
+                }
+                else
+                {
+                    aux *= nr*sign;
+                }
+                c = 1;
+                nr = 0;
+                sign = 1;
+                break;
+            }
+            case '/': {
+                if (!aux)
+                {
+                    aux = nr * sign;
+                }
+                else if (c == 1)
+                {
+                    aux *= nr*sign;
+                }
+                else
+                {
+                    aux /= nr*sign;
+                }
+                c = 2;
+                nr = 0;
+                sign = 1;
+                break;
+            }
+            case '!': {
+                for(int k = nr - 1 ; k>=1 ; k--){
+                    nr=nr*k;
+                }
+                break;
+            }
+            
+            default:;
+            }
+            if (i >= (n - 1))// updates the result because there is no + or - at the end of the string.
+            {
+                if (c == 1)
+                {
+                    result += aux*nr*sign;
+                }
+                else if (c == 2)
+                {
+                    result += aux / nr*sign;
+                }
+                else
+                {
+                    result += nr*sign;
+                }
+            }
+            i++;
+        }
+        cout << "=" << result << endl;
+
+    }
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
