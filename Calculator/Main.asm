@@ -86,9 +86,9 @@ switch :
              jmp psign
 
   aco0 :
-             mov eax, sign                 
-             mul nr
-             add result,eax
+             mov eax, sign                 ;eax = sign 
+             mul nr                        ; eax = eax * nr
+             add result,eax                ; reasult = eax
              mov nr, 0
              mov co, 0
              jmp psign
