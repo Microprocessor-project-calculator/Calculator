@@ -134,13 +134,13 @@ multiplication :
               mov nr ,0        ;nr = 0
               jmp psign        ;jump to label psign
               
-melse  :      mov eax ,sign
-              mul nr 
-              mul aux           
-              mov aux ,eax
-              mov co  , 1
-              mov nr ,0
-              jmp psign            
+melse  :      mov eax ,sign    ;eax = sign
+              mul nr           ;eax * nr
+              mul aux          ;eax* aux
+              mov aux ,eax     ;aux = eax
+              mov co  , 1      ;co = 1
+              mov nr ,0        ;nr = 0
+              jmp psign        ;jump to label psign   
               
               
               
