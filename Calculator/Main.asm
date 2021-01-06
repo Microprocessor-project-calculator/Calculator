@@ -180,7 +180,7 @@ multiplication :
           mov sign,-1
           jmp default
 
-INVOKE ExitProcess, 0
+   exit
 
 main ENDP
 END main
