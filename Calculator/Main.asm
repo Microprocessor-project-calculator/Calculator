@@ -134,7 +134,8 @@ multiplication :
               mov nr ,0        ;nr = 0
               jmp psign        ;jump to label psign
               
-melse  :      mov eax ,sign    ;eax = sign
+melse  :      
+              mov eax ,sign    ;eax = sign
               mul nr           ;eax * nr
               mul aux          ;eax* aux
               mov aux ,eax     ;aux = eax
