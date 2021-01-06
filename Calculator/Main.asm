@@ -93,12 +93,6 @@ subtraction :
 
 
 
-
-
-
-
-
-
 multiplication :    
               cmp aux, 0       ;compare aux and 0
               jne mco2         ;jump to label mco2 if aux != 0 
@@ -124,10 +118,7 @@ multiplication :
               
               
               
-              
-              
-              
-              
+                     
               
  Division : 
             cmp aux ,0                    ;compare aux and 0
@@ -180,7 +171,7 @@ multiplication :
              jmp answer
              
     incre : 
-            inc ebp
+            inc ebp                          ;i++
             jmp loop1
 
 
