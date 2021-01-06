@@ -65,7 +65,7 @@ switch :
              mov eax,sign                   
              mul nr                          ;nr * eax (sign)
              mul aux                         ;eax * aux
-             add result,eax                  ;result += eax
+             add result,eax                  ;result += eax  , result = sign * nr * aux 
              mov aux, 0
              mov nr, 0
              mov co, 0
@@ -79,7 +79,7 @@ switch :
              mov eax,aux                   
              div nr                        ; eax / nr
              mul sign                      ; eax =  ax * sign
-             add result,eax                ; result = eax 
+             add result,eax                ; result+ = eax  , result = aux / nr * sign
              mov aux, 0
              mov nr, 0
              mov co, 0
@@ -88,7 +88,7 @@ switch :
   aco0 :
              mov eax, sign                 ;eax = sign 
              mul nr                        ; eax = eax * nr
-             add result,eax                ; reasult = eax
+             add result,eax                ; reasult+ = eax
              mov nr, 0
              mov co, 0
              jmp psign
