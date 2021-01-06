@@ -4,8 +4,8 @@ INCLUDE Irvine32.inc
    ;variables
 msg byte "insert the expression:",0 
 msg1 byte " result =",0
-buffer byte 30 DUP(0)  ;array to get string from user          
-sign   DWORD 1            ;the sign of the number
+buffer byte 30 DUP(0)      ;array to get string from user          
+sign   DWORD 1             ;the sign of the number
 nr     DWORD 0             
 co     WORD 0              ; flag to know the operation (multiplication  or Division)
 result DWORD 0         
@@ -19,9 +19,9 @@ start :
              mov ebp,0                  ;put zero to ebp register ( index of the buffer array )
              mov sign,1
              mov result,0
-             lea edx,  msg        ;get the offest of the variable msg
+             lea edx,  msg               ;get the offest of the variable msg
              call WriteString           ;print the text in the variable msg to the user
-             lea edx,  buffer     ;get the offest of buffer
+             lea edx,  buffer           ;get the offest of buffer
              mov ecx, sizeof buffer     ;put the size of the array in register ecx
              call ReadString            ;take input from user
             
@@ -81,6 +81,14 @@ switch :
              mul sign                      ; eax =  ax * sign
              add result,eax                ; result = eax 
              mov aux, 0
+             mov nr, 0
+             mov co, 0
+             jmp psign
+
+  aco0 :
+             mov eax, sign                 
+             mul nr
+             add result,eax
              mov nr, 0
              mov co, 0
              jmp psign
