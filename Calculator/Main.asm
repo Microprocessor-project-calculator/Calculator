@@ -168,6 +168,19 @@ melse  :
             mov co  , 2                  ;co=2
             mov nr ,0                    ;nr =0
             jmp psign                    ;jump to label psign
+            
+    delse:                                                    
+            mov eax, aux      
+            div nr
+            mul sign
+            mov aux ,eax
+            mov co  , 2
+            mov nr ,0
+            jmp psign
+            
+            
+            
+            
 
      psign :
               mov sign, 1                     ; sign = 1
