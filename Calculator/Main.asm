@@ -174,6 +174,11 @@ multiplication :
             inc ebp                          ;i++
             jmp loop1
 
+  psign : mov sign, 1
+          jmp default
+          nsign:
+          mov sign,-1
+          jmp default
 
 INVOKE ExitProcess, 0
 
