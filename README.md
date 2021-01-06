@@ -77,7 +77,7 @@ Finally, in ***error*** section we handle the problem of division by zero. as we
 
 
 
-**Resources:**
+# Resources:
 
 [Assembly Language for x86 Processors, 6th Edition](https://www.pearson.com/uk/educators/higher-education-educators/program/Irvine-Assembly-Language-for-x-86-Processors-6th-Edition/PGM965305.html)
 
@@ -86,3 +86,8 @@ Finally, in ***error*** section we handle the problem of division by zero. as we
 [c++ code](https://github.com/Microprocessor-project-calculator/Calculator/blob/master/Calculator/Calculator.cpp)
 
 
+**Both cpp and assembly program are implemented by:**
+
+[Microsoft Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
+
+>Note: we included "Irvine32" liberary in our assembly program which you can find its link [**here**](https://drive.google.com/file/d/0B0zLWZC69TQaNWV6WWRhX1NDZlU/view)
