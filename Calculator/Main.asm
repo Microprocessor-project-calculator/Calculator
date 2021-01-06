@@ -19,9 +19,9 @@ start :
              mov ebp,0                  ;put zero to ebp register ( index of the buffer array )
              mov sign,1
              mov result,0
-             mov edx, offset msg        ;get the offest of the variable msg
+             lea edx,  msg        ;get the offest of the variable msg
              call WriteString           ;print the text in the variable msg to the user
-             mov edx, offset buffer     ;get the offest of buffer
+             lea edx,  buffer     ;get the offest of buffer
              mov ecx, sizeof buffer     ;put the size of the array in register ecx
              call ReadString            ;take input from user
             
