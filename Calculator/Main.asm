@@ -117,6 +117,11 @@ subtraction :
            mov eax, aux     ;eax=aux
            div nr           ;eax/=nr
            mul sign         ;eax*=sign
+           add result,eax
+           mov aux, 0
+           mov nr, 0
+           mov co, 0
+           jmp nsign
   sco0 :
           mov eax, sign    ;sign=eax
           mul nr           ;eax*=nr
