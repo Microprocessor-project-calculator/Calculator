@@ -178,6 +178,10 @@ multiplication :
              mul nr                          ;eax = sign * nr
              add result,eax                  ;result += sign * nr
              jmp answer
+             
+    incre : 
+            inc ebp
+            jmp loop1
 
 
 INVOKE ExitProcess, 0
