@@ -116,7 +116,14 @@ subtraction :
            je error         ;jump to error
            mov eax, aux     ;eax=aux
            div nr           ;eax/=nr
-            mul sign         ;eax*=sign
+           mul sign         ;eax*=sign
+  sco0 :
+          mov eax, sign    
+          mul nr           
+          add result, eax  
+          mov nr, 0        
+          mov co, 0        
+         jmp nsign
 
 
 
