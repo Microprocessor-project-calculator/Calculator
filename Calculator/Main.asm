@@ -170,16 +170,13 @@ melse  :
             jmp psign                    ;jump to label psign
             
     delse:                                                    
-            mov eax, aux      
-            div nr
-            mul sign
-            mov aux ,eax
-            mov co  , 2
-            mov nr ,0
-            jmp psign
-            
-            
-            
+            mov eax, aux                ;eax = aux 
+            div nr                      ;eax / nr
+            mul sign                    ;eax* sign
+            mov aux ,eax                ;aux =eax
+            mov co  , 2                 ;co=2
+            mov nr ,0                   ;nr=0
+            jmp psign                   ;jump to label psign
             
 
      psign :
