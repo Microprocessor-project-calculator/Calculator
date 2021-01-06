@@ -118,11 +118,11 @@ subtraction :
            div nr           ;eax/=nr
            mul sign         ;eax*=sign
   sco0 :
-          mov eax, sign    
-          mul nr           
-          add result, eax  
-          mov nr, 0        
-          mov co, 0        
+          mov eax, sign    ;sign=eax
+          mul nr           ;eax*=nr
+          add result, eax  ;result+=eax
+          mov nr, 0        ;nr=0
+          mov co, 0        ;co=0
          jmp nsign
 
 
