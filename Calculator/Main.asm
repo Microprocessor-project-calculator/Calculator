@@ -71,7 +71,19 @@ switch :
              mov co, 0
              jmp psign
 
-
+ aco2 : 
+             cmp co, 2
+             jne aco0
+             cmp nr,0
+             je error
+             mov eax,aux
+             div nr
+             mul sign
+             add result,eax
+             mov aux, 0
+             mov nr, 0
+             mov co, 0
+             jmp psign
 
 subtraction :
            cmp buffer[ebp - 1], '*'       ;if (buffer[ebp-1]=='*')      
