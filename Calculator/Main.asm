@@ -61,7 +61,7 @@ switch :
              cmp buffer[ebp-1],'/'
              je psign                        ;jump  to label psing if buffer[ebp] == '/'
              cmp co, 1
-             jne aco2                        ;jump  to label aco2 if buffer[ebp] != 1 
+             jne aco2                        ;jump  to label aco2 if co != 1 
              mov eax,sign                   
              mul nr                          ;nr * eax (sign)
              mul aux                         ;eax * aux
@@ -72,14 +72,14 @@ switch :
              jmp psign
 
  aco2 : 
-             cmp co, 2
-             jne aco0
-             cmp nr,0
-             je error
-             mov eax,aux
-             div nr
-             mul sign
-             add result,eax
+             cmp co, 2                       
+             jne aco0                      ;jump to label aco0 if co != 2
+             cmp nr,0                     
+             je error                      ;jump to label error if the denominator equal zero ( nr = 0 )
+             mov eax,aux                   
+             div nr                        ; eax / nr
+             mul sign                      ; eax =  ax * sign
+             add result,eax                ; result = eax 
              mov aux, 0
              mov nr, 0
              mov co, 0
