@@ -147,6 +147,8 @@ multiplication :
   mco2   :   
               cmp co , 2       ;compare co and 2
               jne melse        ;jump to label melse if co!=2
+              cmp nr,0
+              je error
               mov eax, aux     ;eax = aux
               div nr           ;eax /nr
               mul sign         ;eax *sign
