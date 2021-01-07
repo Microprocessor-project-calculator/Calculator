@@ -251,8 +251,8 @@ melse  :
             jmp start
 
    error :
-             mov edx, offset msg2
-             call WriteString
+             mov edx, offset msg2      
+             call WriteString         ;print the text in the variable msg2 to the user
              call crlf
              jmp start          
 
