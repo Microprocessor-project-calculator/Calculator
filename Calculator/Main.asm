@@ -4,6 +4,7 @@ INCLUDE Irvine32.inc
    ;variables
 msg byte "insert the expression:",0 
 msg1 byte " result =",0
+msg2 byte "ERROR!",0
 buffer byte 30 DUP(0)      ;array to get string from user          
 sign   DWORD 1             ;the sign of the number
 nr     DWORD 0             
