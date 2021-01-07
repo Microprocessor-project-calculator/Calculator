@@ -250,7 +250,11 @@ melse  :
             call crlf                      ;\n
             jmp start
 
-             
+   error :
+             mov edx, offset msg2
+             call WriteString
+             call crlf
+             jmp start          
 
    exit
 
