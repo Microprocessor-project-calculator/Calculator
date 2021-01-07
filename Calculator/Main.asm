@@ -237,6 +237,16 @@ melse  :
     incre : 
             inc ebp                          ;i++
             jmp loop1
+            
+            
+            
+    answer : 
+            mov edx, offset msg1        
+            call WriteString
+            mov eax, result
+            call WriteInt
+            call crlf                      ;\n
+            jmp start
 
              
 
