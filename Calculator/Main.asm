@@ -193,7 +193,9 @@ melse  :
             mov nr ,0                    ;nr =0
             jmp psign                    ;jump to label psign
             
-    delse:                                                    
+    delse:   
+            cmp nr,0
+            je error
             mov eax, aux                ;eax = aux 
             div nr                      ;eax / nr
             mul sign                    ;eax* sign
