@@ -259,7 +259,7 @@ melse  :
              call crlf
              jmp start          
 
-   exit
+  INVOKE ExitProcess, 0
 
 main ENDP
 END main
