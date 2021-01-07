@@ -195,7 +195,7 @@ melse  :
             
     delse:   
             cmp nr,0                    ;compare nr and 0
-            je error                    ;jump to label error if the denominator=0
+            je error                    ;jump to label error if the denominator = 0
             mov eax, aux                ;eax = aux 
             div nr                      ;eax / nr
             mul sign                    ;eax* sign
