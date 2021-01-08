@@ -203,6 +203,20 @@ melse  :
             mov co  , 2                 ;co=2
             mov nr ,0                   ;nr=0
             jmp psign                   ;jump to label psign
+            
+ factorial :
+            mov ebx,ecx
+            mov ecx,nr
+            sub ecx,1
+         
+   floop :
+            mov eax,nr
+            mul ecx
+            mov nr,eax
+            loop floop
+            mov ecx,ebx
+            jmp default
+
 
    psign :
               mov sign, 1                     ; sign = 1
