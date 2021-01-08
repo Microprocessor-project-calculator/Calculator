@@ -55,7 +55,7 @@ switch :
              cmp buffer[ebp],'/'
              je Division               ;jump if v[i]=='/'
              cmp buffer[ebp],'!'
-             je factorial
+             je factorial              ;jump if v[i]=='!'
 
 
  addition : 
