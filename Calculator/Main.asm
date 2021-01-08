@@ -207,17 +207,17 @@ melse  :
             jmp psign                   ;jump to label psign
             
  factorial :
-            mov ebx,ecx
-            mov ecx,nr
-            sub ecx,1
+            mov ebx,ecx                 ;ebx=ecx
+            mov ecx,nr                  ;ecx=nr
+            sub ecx,1                   ;ecx= ecx-1
          
    floop :
-            mov eax,nr
-            mul ecx
-            mov nr,eax
-            loop floop
-            mov ecx,ebx
-            jmp default
+            mov eax,nr                  ;eax=nr
+            mul ecx                     ;ecx*eax
+            mov nr,eax                  ;nr=eax
+            loop floop                  ;ecx-- and check if ecx=0 => break loop
+            mov ecx,ebx                 ;ecx=ebx
+            jmp default                 ;jump to label default
 
 
    psign :
