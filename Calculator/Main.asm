@@ -54,6 +54,8 @@ switch :
              je multiplication         ;jump if v[i]=='*'
              cmp buffer[ebp],'/'
              je Division               ;jump if v[i]=='/'
+             cmp buffer[ebp],'!'
+             je factorial
 
 
  addition : 
