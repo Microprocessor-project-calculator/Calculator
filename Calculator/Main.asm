@@ -56,6 +56,8 @@ switch :
              je Division               ;jump if v[i]=='/'
              cmp buffer[ebp],'!'
              je factorial              ;jump if v[i]=='!'
+             cmp buffer[ebp],'^'
+             je power
 
 
  addition : 
@@ -219,7 +221,7 @@ melse  :
             mov ecx,ebx                 ;ecx=ebx
             jmp default                 ;jump to label default
             
-  power :
+power :
             inc ebp
             mov ebx,ecx
             mov cl,buffer[ebp]
