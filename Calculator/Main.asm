@@ -218,6 +218,22 @@ melse  :
             loop floop                  ;ecx-- and check if ecx=0 => break loop
             mov ecx,ebx                 ;ecx=ebx
             jmp default                 ;jump to label default
+            
+  power :
+            inc ebp
+            mov ebx,ecx
+            mov cl,buffer[ebp]
+            sub cl,'0'
+            movzx ecx, cl
+            dec ecx
+            mov esi,nr
+   ploop :
+            mov eax,nr
+            mul esi
+            mov nr,eax
+            loop ploop
+            mov ecx,ebx
+            jmp default
 
 
    psign :
