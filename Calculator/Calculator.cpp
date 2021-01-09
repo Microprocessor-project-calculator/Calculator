@@ -38,7 +38,7 @@ int main()
                         result += aux / nr*sign;
                         aux = 0;
                     }
-                    else
+                    else// there is no * or / befor +
                     {
                         result += nr*sign;
                     }
@@ -51,19 +51,19 @@ int main()
                 break;
             }
             case '-': {
-                if (!(v[i - 1] == '*') && !(v[i - 1] == '/'))
+                if (!(v[i - 1] == '*') && !(v[i - 1] == '/')) //if a*-b or a/-b occurs it does nothing
                 {
-                    if (c == 1)
+                    if (c == 1)// * was found before: 2*2-1
                     {
-                        result += aux*nr*sign;
-                        aux = 0;
+                        result += aux*nr*sign;// updates the end result
+                        aux = 0;//aux is reseted
                     }
-                    else if (c == 2)
+                    else if (c == 2)// / was found before: 2/2/1
                     {
                         result += aux / nr*sign;
                         aux = 0;
                     }
-                    else
+                    else // there is no * or / befor -
                     {
                         result += nr*sign;
                     }
@@ -74,7 +74,7 @@ int main()
                 break;
             }
             case '*': {
-                if (!aux)
+                if (!aux)//aux==0
                 {
                     aux = nr*sign; // aux hold the result from * and / operations
                 }
@@ -110,18 +110,18 @@ int main()
                 break;
             }
             case '!': {
-                for(int k = nr - 1 ; k>=1 ; k--){
-                    nr=nr*k;
+                for(int k = nr - 1 ; k>=1 ; k--){ // nr = 4, for loop will start from 3
+                    nr=nr*k; // nr = 4*3*...
                 }
                 break;
             }
             case '^': {
-                i++;
-                int m = v[i] - '0';
-                m--;
+                i++;// to get the power (2^3) -> 3
+                int m = v[i] - '0'; //convert from char to int
+                m--;// (2^3) -> we should mul 2 in another two 2 -> 2* (2*2)
                 int k = nr;
                 while(m--){
-                    nr = nr *k;
+                    nr = nr *k;//first itration : nr = 2*2 -> nr=4, second itration : nr = 4*2 -> nr=8 
                 }
                 break;
             }
