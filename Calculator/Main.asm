@@ -222,18 +222,18 @@ melse  :
             jmp default                 ;jump to label default
             
 power :
-            inc ebp
-            mov ebx,ecx
-            mov cl,buffer[ebp]
-            sub cl,'0'
-            movzx ecx, cl
-            dec ecx
-            mov esi,nr
+            inc ebp                     ;i++
+            mov ebx,ecx                 ;copy the string length (ecx) to (ebx)
+            mov cl,buffer[ebp]          ;get the number of power from the array ( m = v[i])
+            sub cl,'0'                  ; m - '0'
+            movzx ecx, cl               ; change the size from one byte to 4 byte ( ecx = power )
+            dec ecx                     ;  m--
+            mov esi,nr                  
    ploop :
-            mov eax,nr
-            mul esi
+            mov eax,nr                   
+            mul esi                     ; eax = eax * esi
             mov nr,eax
-            loop ploop
+            loop ploop                  ;ecx-- and check if ecx=0 => break loop
             mov ecx,ebx
             jmp default
 
