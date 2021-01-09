@@ -115,6 +115,16 @@ int main()
                 }
                 break;
             }
+            case '^': {
+                i++;
+                int m = v[i] - '0';
+                m--;
+                int k = nr;
+                while(m--){
+                    nr = nr *k;
+                }
+                break;
+            }
             
             default:;
             }
