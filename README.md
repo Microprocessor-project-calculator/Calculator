@@ -49,8 +49,8 @@ we use ***start*** to represent the `infinite loop` in which user can use the pr
 ![4eeb0392-f1df-49bd-b542-a1dd437cfc7f](https://user-images.githubusercontent.com/76706477/103569674-659ec480-4ed0-11eb-8e13-b2922d7fc7ee.jpg)
 
 
-after that, we have ***switch*** section in which we check if entered symbol is: '+','-','\*','/', '!' or other.
-Depending on the entered symbol we `je` to required label: ***addition***, ***substraction***, ***multiplication***, ***Division*** or ***factorial***
+after that, we have ***switch*** section in which we check if entered symbol is: '+','-','\*','/','^','!' or other.
+Depending on the entered symbol we `je` to required label: ***addition***, ***substraction***, ***multiplication***, ***Division***, ***factorial***, or ***power***
 
 **Example of different inputs:**
 
@@ -63,6 +63,16 @@ also, in ***answer*** section we `mov` the final value to the result and show it
 Finally, in ***error*** section we handle the problem of division by zero. as we told user that, there's an error by divide by zero:
 
 ![photo6028163303936734306 (1)](https://user-images.githubusercontent.com/76706477/103699536-c3540f00-4fab-11eb-9e7d-4573b6fca80f.jpg)
+
+
+**We recently added:**
+
+***Power*** which improve our simple calculator to more effective one, this addition make user able to calculate power(^) of any number and make another operations with it.
+
+![1](https://user-images.githubusercontent.com/76706477/104108816-8603c000-52d0-11eb-9b21-12d44a50c1b4.jpg)
+
+
+
 
 
 
@@ -86,7 +96,7 @@ Finally, in ***error*** section we handle the problem of division by zero. as we
 [c++ code](https://github.com/Microprocessor-project-calculator/Calculator/blob/master/Calculator/Calculator.cpp)
 
 
-**Both cpp and assembly program are implemented by:**
+**Both cpp and assembly programs are implemented by:**
 
 [Microsoft Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16)
 
