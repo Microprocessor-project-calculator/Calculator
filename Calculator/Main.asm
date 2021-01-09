@@ -47,17 +47,17 @@ digit :
   
 switch : 
              cmp buffer[ebp],'+'        
-             je addition               ;jump if v[i]=='+'
+             je addition               ;jump to addition label if v[i]=='+'
              cmp buffer[ebp],'-'
-             je subtraction            ;jump if v[i]=='-'
+             je subtraction            ;jump to subtraction label if v[i]=='-'
              cmp buffer[ebp],'*'
-             je multiplication         ;jump if v[i]=='*'
+             je multiplication         ;jump to multiplication label if v[i]=='*'
              cmp buffer[ebp],'/'
-             je Division               ;jump if v[i]=='/'
+             je Division               ;jump to Division label if v[i]=='/'
              cmp buffer[ebp],'!'
-             je factorial              ;jump if v[i]=='!'
+             je factorial              ;jump to factorial label if v[i]=='!'
              cmp buffer[ebp],'^'
-             je power
+             je power                  ;jump to power label if v[i]=='^'
 
 
  addition : 
