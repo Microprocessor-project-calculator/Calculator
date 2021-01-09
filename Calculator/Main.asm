@@ -220,6 +220,7 @@ melse  :
             loop floop                  ;ecx-- and check if ecx=0 => break loop
             mov ecx,ebx                 ;ecx=ebx
             jmp default                 ;jump to label default
+
             
 power :
             inc ebp                     ;i++
@@ -228,19 +229,32 @@ power :
             sub cl,'0'                  ; m - '0'
             movzx ecx, cl               ; change the size from one byte to 4 byte ( ecx = power )
             dec ecx                     ;  m--
-            mov esi,nr                  
+            mov esi,nr                  ; esi = nr  ( k = nr )
    ploop :
             mov eax,nr                   
             mul esi                     ; eax = eax * esi
             mov nr,eax
             loop ploop                  ;ecx-- and check if ecx=0 => break loop
-            mov ecx,ebx
-            jmp default
+            mov ecx,ebx                 ;ecx=ebx
+            jmp default                 ;jump to label default
+
+            ; we can use anthor method in power 
+            ; we won't use esi register and the method is:
+                ;ploop :
+                ;mov al, buffer[ebp-2] 
+                ;sub al,'0'
+                ;movzx eax , al   ( k = nr )
+                ;mul nr
+                ;mov nr,eax
+                ;loop ploop
+
 
 
    psign :
               mov sign, 1                     ; sign = 1
               jmp default        
+
+
   nsign:
               mov sign,-1                     ;sign=-1
               jmp default
