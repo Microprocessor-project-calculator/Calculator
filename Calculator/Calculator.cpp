@@ -35,6 +35,9 @@ int main()
                     }
                     else if (c == 2)// / was found before: 2/2+1
                     {
+                        if(nr==0){ // 2/0
+                            goto ERROR;
+                        }
                         result += aux / nr*sign;
                         aux = 0;
                     }
@@ -60,6 +63,9 @@ int main()
                     }
                     else if (c == 2)// / was found before: 2/2/1
                     {
+                        if(nr==0){
+                            goto ERROR;
+                        }
                         result += aux / nr*sign;
                         aux = 0;
                     }
@@ -80,6 +86,9 @@ int main()
                 }
                 else if (c == 2)
                 {
+                    if(nr==0){
+                        goto ERROR;
+                    }
                     aux /= nr*sign;
                 }
                 else
@@ -102,6 +111,9 @@ int main()
                 }
                 else
                 {
+                    if(nr==0){
+                        goto ERROR;
+                    }
                     aux /= nr*sign;
                 }
                 c = 2;
@@ -136,6 +148,9 @@ int main()
                 }
                 else if (c == 2)
                 {
+                    if(nr==0){
+                        goto ERROR;
+                    }
                     result += aux / nr*sign;
                 }
                 else
@@ -146,6 +161,7 @@ int main()
             i++;
         }
         cout << "=" << result << endl;
+        ERROR :cout << "ERROR" << endl;
 
     }
 
