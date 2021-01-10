@@ -20,6 +20,8 @@ start :
              mov ebp,0                  ;put zero to ebp register ( index of the buffer array )
              mov sign,1
              mov result,0
+             mov nr,0
+             mov aux,0
              lea edx,  msg               ;get the offest of the variable msg
              call WriteString           ;print the text in the variable msg to the user
              lea edx,  buffer           ;get the offest of buffer
