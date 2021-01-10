@@ -67,28 +67,28 @@ switch :
              je psign                        ;jump  to label psing if buffer[ebp] == '/'
              cmp co, 1
              jne aco2                        ;jump  to label aco2 if co != 1 
-             mov eax,sign                   
+             mov eax,sign                    ;eax = sign 
              mul nr                          ;nr * eax (sign)
              mul aux                         ;eax * aux
              add result,eax                  ;result += eax  , result = sign * nr * aux 
-             mov aux, 0
-             mov nr, 0
-             mov co, 0
-             jmp psign
+             mov aux, 0                      ; aux=0
+             mov nr, 0                       ; nr = 0
+             mov co, 0                       ; co = 0
+             jmp psign                       ; jump to label psign
 
  aco2 : 
              cmp co, 2                       
              jne aco0                      ;jump to label aco0 if co != 2
              cmp nr,0                     
              je error                      ;jump to label error if the denominator equal zero ( nr = 0 )
-             mov eax,aux                   
-             div nr                        ; eax / nr
+             mov eax,aux                   ;eax = aux 
+             div nr                        ; eax = eax / nr 
              mul sign                      ; eax =  ax * sign
              add result,eax                ; result+ = eax  , result = aux / nr * sign
-             mov aux, 0
-             mov nr, 0
-             mov co, 0
-             jmp psign
+             mov aux, 0                    ; aux=0
+             mov nr, 0                     ; nr = 0
+             mov co, 0                     ; co = 0
+             jmp psign                     ; jump to label psign
 
   aco0 :
              mov eax, sign                 ;eax = sign 
