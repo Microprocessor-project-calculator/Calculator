@@ -307,6 +307,7 @@ power :
              call crlf
              mov nr,0
              mov aux,0
+             mov co,0
              jmp start          
 
   INVOKE ExitProcess, 0               ;exit  
